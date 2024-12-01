@@ -1,0 +1,18 @@
+def hapus_spasi_ganda(teks):
+    # Membagi string menjadi kata-kata
+    kata_kata = teks.strip().split()
+
+    # Membuat string baru dengan spasi tunggal di antara kata-kata
+    teks_bersih = ""
+    for kata in kata_kata:
+        teks_bersih += kata + " "
+
+    # Menghapus spasi ekstra di akhir string
+    return teks_bersih.strip()
+
+# Input string dari pengguna
+teks = input("Masukkan teks: ")
+
+# Menghapus spasi ganda dan menampilkan hasilnya
+teks_bersih = hapus_spasi_ganda(teks)
+print(f"Teks setelah menghapus spasi ganda: '{teks_bersih}'")

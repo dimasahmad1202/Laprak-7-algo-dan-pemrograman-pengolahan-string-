@@ -1,0 +1,27 @@
+def cari_kata_terpendek_terpanjang(kalimat):
+    # Memecah kalimat menjadi daftar kata
+    kata_kata = kalimat.split()
+
+    # Inisialisasi kata terpendek dan terpanjang dengan kata pertama
+    kata_terpendek = kata_kata[0]
+    kata_terpanjang = kata_kata[0]
+
+    # Memeriksa setiap kata dalam daftar
+    for kata in kata_kata:
+        # Menentukan kata terpendek
+        if len(kata) < len(kata_terpendek):
+            kata_terpendek = kata
+        # Menentukan kata terpanjang
+        if len(kata) > len(kata_terpanjang):
+            kata_terpanjang = kata
+
+    return kata_terpendek, kata_terpanjang
+
+# Input kalimat dari pengguna
+kalimat = input("Masukkan kalimat: ")
+
+# Menemukan kata terpendek dan terpanjang
+terpendek, terpanjang = cari_kata_terpendek_terpanjang(kalimat)
+
+# Menampilkan hasil
+print(f"terpendek: {terpendek}, terpanjang: {terpanjang}")

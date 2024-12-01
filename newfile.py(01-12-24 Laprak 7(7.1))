@@ -1,0 +1,35 @@
+def is_anagram(word1, word2):
+    # Memeriksa apakah kedua kata memiliki jumlah huruf yang sama
+    if len(word1) != len(word2):
+        return False
+    
+    # Menghitung frekuensi huruf pada word1
+    count_word1 = {}
+    for char in word1:
+        if char in count_word1:
+            count_word1[char] += 1
+        else:
+            count_word1[char] = 1
+
+    # Menghitung frekuensi huruf pada word2 dan membandingkannya dengan word1
+    for char in word2:
+        if char not in count_word1 or count_word1[char] == 0:
+            return False
+        count_word1[char] -= 1
+    
+    # Memeriksa apakah semua nilai dalam count_word1 adalah 0
+    for value in count_word1.values():
+        if value != 0:
+            return False
+    
+    return True
+
+# Input dari pengguna
+word1 = input("Masukkan kata pertama: ")
+word2 = input("Masukkan kata kedua: ")
+
+# Memeriksa apakah keduanya anagram
+if is_anagram(word1, word2):
+    print(f'"{word1}" dan "{word2}" adalah anagram.')
+else:
+    print(f'"{word1}" dan "{word2}" bukan anagram.')

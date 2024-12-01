@@ -1,0 +1,13 @@
+def hitung_kemunculan(teks, kata_kunci):
+    # Menghitung berapa kali kata kunci muncul dalam teks
+    return teks.count(kata_kunci)
+
+# Input teks berita dan kata kunci
+teks_berita = input("Masukkan teks berita: ")
+kata_kunci = input("Masukkan kata kunci yang ingin dicari: ")
+
+# Menghitung kemunculan kata kunci dalam teks
+jumlah_kemunculan = hitung_kemunculan(teks_berita, kata_kunci)
+
+# Menampilkan hasil
+print(f"Kata '{kata_kunci}' muncul sebanyak {jumlah_kemunculan} kali dalam teks berita.")
